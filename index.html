@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ระบบลางานออนไลน์</title>
   <style>
     body {
-      background-color: #e6f0fa;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
+      font-family: 'Sarabun', sans-serif;
+      background-color: #eaf4fb;
       color: #333;
+      padding: 20px;
+      margin: 0;
     }
     .container {
-      max-width: 500px;
+      max-width: 600px;
+      background-color: #ffffff;
       margin: auto;
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     h2 {
       text-align: center;
       color: #4a90e2;
-      margin-bottom: 1.5rem;
+      margin-bottom: 30px;
     }
     label {
       display: block;
-      margin-bottom: 0.5rem;
-      margin-top: 1rem;
+      margin: 15px 0 5px;
+      font-weight: 500;
     }
-    select, input[type="date"] {
+    select, input[type="date"], input[type="email"] {
       width: 100%;
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 10px;
+      border: 1px solid #cce0f5;
+      border-radius: 6px;
+      font-size: 16px;
     }
     button {
-      margin-top: 2rem;
+      margin-top: 25px;
       width: 100%;
+      padding: 12px;
       background-color: #4a90e2;
-      color: white;
       border: none;
-      padding: 0.75rem;
-      border-radius: 5px;
+      border-radius: 6px;
+      color: white;
+      font-size: 18px;
       cursor: pointer;
-      font-size: 1rem;
     }
     button:hover {
       background-color: #357ab8;
@@ -54,12 +56,12 @@
 <body>
   <div class="container">
     <h2>ระบบลางานออนไลน์</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeRTdwJATjGfUTo26zljBAmurzIzeUXiXWnJBVkZiIwQlDDDw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSebQJlPeJQhnE91EOpzuygGlzTjqac34VCqwsHn3kcjm3o2ZA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       
-      <!-- Name -->
-      <label for="name">ชื่อ-นามสกุล พนักงาน</label>
-      <select name="entry.2087950008" required>
-        <option value="">-- เลือกชื่อ --</option>
+      <!-- 1. ชื่อ-นามสกุล -->
+      <label for="employee-name">ชื่อ-นามสกุล พนักงาน</label>
+      <select name="entry.1902344621" id="employee-name" required>
+        <option value="">-- กรุณาเลือก --</option>
         <option>อารีวรรณ แก้วดวงดี</option>
         <option>อัจฉริยาพร เอียงประยูร</option>
         <option>อินทิรา อินทรโสภา</option>
@@ -74,10 +76,10 @@
         <option>กรวิก พุ่มโพธิ์</option>
       </select>
 
-      <!-- Email -->
-      <label for="email">E-mail พนักงาน</label>
-      <select name="entry.1341883794" required>
-        <option value="">-- เลือกอีเมล --</option>
+      <!-- 2. Email -->
+      <label for="employee-email">E-mail พนักงาน</label>
+      <select name="entry.426231400" id="employee-email" required>
+        <option value="">-- กรุณาเลือก --</option>
         <option>areewan.aapg@gmail.com</option>
         <option>adchriyaporn.aapg@gmail.com</option>
         <option>inthira.aapg@gmail.com</option>
@@ -89,10 +91,10 @@
         <option>oranij.aapg@gmail.com</option>
       </select>
 
-      <!-- Leave Type -->
-      <label for="leaveType">ประเภทการลา</label>
-      <select name="entry.579282109" required>
-        <option value="">-- เลือกประเภทการลา --</option>
+      <!-- 3. ประเภทการลา -->
+      <label for="leave-type">ประเภทการลา</label>
+      <select name="entry.407942365" id="leave-type" required>
+        <option value="">-- กรุณาเลือก --</option>
         <option>ลาป่วย-มีใบรับรองแพทย์</option>
         <option>ลาป่วย-ไม่มีใบรับรองแพทย์</option>
         <option>ลากิจ</option>
@@ -100,31 +102,23 @@
         <option>อื่นๆ</option>
       </select>
 
-      <!-- Start Date -->
-      <label for="startDate">วันที่เริ่มลา</label>
-      <input type="date" name="entry.451881981" required />
+      <!-- 4. วันที่เริ่มลา -->
+      <label for="start-date">วันที่เริ่มลา</label>
+      <input type="date" name="entry.569913865" id="start-date" required>
 
-      <!-- End Date -->
-      <label for="endDate">วันที่สิ้นสุดลา</label>
-      <input type="date" name="entry.1758060583" required />
+      <!-- 5. วันที่สิ้นสุดลา -->
+      <label for="end-date">วันที่สิ้นสุดลา</label>
+      <input type="date" name="entry.1743134524" id="end-date" required>
 
       <button type="submit">ส่งข้อมูล</button>
     </form>
 
-    <!-- Hidden iframe for background submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) alert('ส่งข้อมูลสำเร็จแล้ว');"></iframe>
+    <!-- Hidden iframe for silent submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { alert('ส่งข้อมูลเรียบร้อยแล้ว'); document.querySelector('form').reset(); }"></iframe>
   </div>
 
   <script>
     let submitted = false;
-
-	 // Google Form URL
-            const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeRTdwJATjGfUTo26zljBAmurzIzeUXiXWnJBVkZiIwQlDDDw/formResponse';
-            
-            // Get form data
-            const formData = new FormData(this);
-            
-
   </script>
 </body>
 </html>
