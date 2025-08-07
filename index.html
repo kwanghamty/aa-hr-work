@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ระบบลางานออนไลน์</title>
+  <style>
+    body {
+      background-color: #e6f0fa;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #4a90e2;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+    }
+    select, input[type="date"] {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #357ab8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ระบบลางานออนไลน์</h2>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeRTdwJATjGfUTo26zljBAmurzIzeUXiXWnJBVkZiIwQlDDDw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+      
+      <!-- Name -->
+      <label for="name">ชื่อ-นามสกุล พนักงาน</label>
+      <select name="entry.1665727187" required>
+        <option value="">-- เลือกชื่อ --</option>
+        <option>อารีวรรณ แก้วดวงดี</option>
+        <option>อัจฉริยาพร เอียงประยูร</option>
+        <option>อินทิรา อินทรโสภา</option>
+        <option>พิยดา วงค์กระโซ่</option>
+        <option>สุภาวิณี ปิตะสุทธิ์</option>
+        <option>นิชธิมา คุณากรโยธิน</option>
+        <option>เมทินี สาระคง</option>
+        <option>ธนรัชต์ เผื่อนปฐม</option>
+        <option>อรนิจ ศรีธนะ</option>
+        <option>ภาสกร หนูเทพ</option>
+        <option>อวิรุธธิ์ คงเอี้ยง</option>
+        <option>กรวิก พุ่มโพธิ์</option>
+      </select>
+
+      <!-- Email -->
+      <label for="email">E-mail พนักงาน</label>
+      <select name="entry.1048879115" required>
+        <option value="">-- เลือกอีเมล --</option>
+        <option>areewan.aapg@gmail.com</option>
+        <option>adchriyaporn.aapg@gmail.com</option>
+        <option>inthira.aapg@gmail.com</option>
+        <option>phityada.aapg@gmail.com</option>
+        <option>supavinee.aapg@gmail.com</option>
+        <option>nichtima.aapg@gmail.com</option>
+        <option>methinee.aapg@gmail.com</option>
+        <option>thanarat.aapg@gmail.com</option>
+        <option>oranij.aapg@gmail.com</option>
+      </select>
+
+      <!-- Leave Type -->
+      <label for="leaveType">ประเภทการลา</label>
+      <select name="entry.2063016550" required>
+        <option value="">-- เลือกประเภทการลา --</option>
+        <option>ลาป่วย-มีใบรับรองแพทย์</option>
+        <option>ลาป่วย-ไม่มีใบรับรองแพทย์</option>
+        <option>ลากิจ</option>
+        <option>ลาพักร้อน</option>
+        <option>อื่นๆ</option>
+      </select>
+
+      <!-- Start Date -->
+      <label for="startDate">วันที่เริ่มลา</label>
+      <input type="date" name="entry.1891422706" required />
+
+      <!-- End Date -->
+      <label for="endDate">วันที่สิ้นสุดลา</label>
+      <input type="date" name="entry.1834342941" required />
+
+      <button type="submit">ส่งข้อมูล</button>
+    </form>
+
+    <!-- Hidden iframe for background submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) alert('ส่งข้อมูลสำเร็จแล้ว');"></iframe>
+  </div>
+
+  <script>
+    let submitted = false;
+
+	 // Google Form URL
+            const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSeRTdwJATjGfUTo26zljBAmurzIzeUXiXWnJBVkZiIwQlDDDw/formResponse';
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+
+  </script>
+</body>
+</html>
