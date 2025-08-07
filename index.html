@@ -57,36 +57,48 @@
 <body>
   <h1>ระบบลางานออนไลน์</h1>
   <form action="https://script.google.com/macros/s/AKfycby3uIgjRXNTz9LLuTSnSd-xunWdC8mjS2_1bfKJbmDaV21ptirbpUINwcS192FVvWNY/exec" method="POST">
-    <label>ชื่อ-นามสกุล พนักงาน</label>
-    <select name="fullname" required>
-      <option value="">-- เลือกชื่อ --</option>
-      <option>อารีวรรณ แก้วดวงดี</option>
-      <option>อัจฉริยาพร เอียงประยูร</option>
-      <option>อินทิรา อินทรโสภา</option>
-      <option>พิยดา วงค์กระโซ่</option>
-      <option>สุภาวิณี ปิตะสุทธิ์</option>
-      <option>นิชธิมา คุณากรโยธิน</option>
-      <option>เมทินี สาระคง</option>
-      <option>ธนรัชต์ เผื่อนปฐม</option>
-      <option>อรนิจ ศรีธนะ</option>
-      <option>ภาสกร หนูเทพ</option>
-      <option>อวิรุธธิ์ คงเอี้ยง</option>
-      <option>กรวิก พุ่มโพธิ์</option>
-    </select>
+   <label>ชื่อ-นามสกุล พนักงาน</label>
+<select id="fullname" name="fullname" required onchange="updateEmail()">
+  <option value="">-- เลือกชื่อ --</option>
+  <option value="อารีวรรณ แก้วดวงดี">อารีวรรณ แก้วดวงดี</option>
+  <option value="อัจฉริยาพร เอียงประยูร">อัจฉริยาพร เอียงประยูร</option>
+  <option value="อินทิรา อินทรโสภา">อินทิรา อินทรโสภา</option>
+  <option value="พิยดา วงค์กระโซ่">พิยดา วงค์กระโซ่</option>
+  <option value="สุภาวิณี ปิตะสุทธิ์">สุภาวิณี ปิตะสุทธิ์</option>
+  <option value="นิชธิมา คุณากรโยธิน">นิชธิมา คุณากรโยธิน</option>
+  <option value="เมทินี สาระคง">เมทินี สาระคง</option>
+  <option value="ธนรัชต์ เผื่อนปฐม">ธนรัชต์ เผื่อนปฐม</option>
+  <option value="อรนิจ ศรีธนะ">อรนิจ ศรีธนะ</option>
+  <option value="ภาสกร หนูเทพ">ภาสกร หนูเทพ</option>
+  <option value="อวิรุธธิ์ คงเอี้ยง">อวิรุธธิ์ คงเอี้ยง</option>
+  <option value="กรวิก พุ่มโพธิ์">กรวิก พุ่มโพธิ์</option>
+</select>
 
-    <label>Email พนักงาน</label>
-    <select name="email" required>
-      <option value="">-- เลือก Email --</option>
-      <option>areewan.aapg@gmail.com</option>
-      <option>adchriyaporn.aapg@gmail.com</option>
-      <option>inthira.aapg@gmail.com</option>
-      <option>phityada.aapg@gmail.com</option>
-      <option>supavinee.aapg@gmail.com</option>
-      <option>nichtima.aapg@gmail.com</option>
-      <option>methinee.aapg@gmail.com</option>
-      <option>thanarat.aapg@gmail.com</option>
-      <option>oranij.aapg@gmail.com</option>
-    </select>
+<label>Email พนักงาน</label>
+<input type="email" id="email" name="email" readonly required />
+
+<script>
+  const emailMap = {
+    "อารีวรรณ แก้วดวงดี": "areewan.aapg@gmail.com",
+    "อัจฉริยาพร เอียงประยูร": "adchriyaporn.aapg@gmail.com",
+    "อินทิรา อินทรโสภา": "inthira.aapg@gmail.com",
+    "พิยดา วงค์กระโซ่": "phityada.aapg@gmail.com",
+    "สุภาวิณี ปิตะสุทธิ์": "supavinee.aapg@gmail.com",
+    "นิชธิมา คุณากรโยธิน": "nichtima.aapg@gmail.com",
+    "เมทินี สาระคง": "methinee.aapg@gmail.com",
+    "ธนรัชต์ เผื่อนปฐม": "thanarat.aapg@gmail.com",
+    "อรนิจ ศรีธนะ": "oranij.aapg@gmail.com",
+    "ภาสกร หนูเทพ": "pasakorn.aapg@gmail.com",
+    "อวิรุธธิ์ คงเอี้ยง": "awirut.aapg@gmail.com",
+    "กรวิก พุ่มโพธิ์": "korawik.aapg@gmail.com"
+  };
+
+  function updateEmail() {
+    const fullname = document.getElementById("fullname").value;
+    const emailInput = document.getElementById("email");
+    emailInput.value = emailMap[fullname] || "";
+  }
+</script>
 
     <label>ประเภทการลา</label>
     <select name="leaveType" required>
